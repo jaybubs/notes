@@ -1,0 +1,12 @@
+\section{generic}%
+\label{sec:generic}
+
+wrt php functions, if using PDO for mdb, the host should be the same name as the service name in docker-compose.yml
+
+
+\section{dbeaver}%
+\label{sec:dbeaver}
+
+make sure dbeaver is running inside the wsl if tryna access the same network docker is on, still haven't resolved how to penetrate into it, looks like i'm the only person with this problem rn
+
+make sure for \textit{mariadb} the initialization has keep alive of some value (180), same for timeouts in \textit{error handle} that are set for some values (20000,5000,5001)

@@ -1,0 +1,32 @@
+\section{general}%
+\label{sec:general}
+
+to replace, use s, eg to replace (g)lobally foo with bar:
+\begin{verbatim}
+	:%s/foo/bar/g
+\end{verbatim}
+
+to globally delete all lines containing a string use:
+\begin{verbatim}
+	:g/string/d
+\end{verbatim}
+
+to run a process on the current file (\%)in the shell and get the output back into the file do:
+\begin{verbatim}
+	:%!command
+\end{verbatim}
+
+to quickly sort a list, it can be useful to use linux's built in sort and keep unique values (-u flag):
+\begin{verbatim}
+	:%!sort -u
+\end{verbatim}
+
+to overwrite a file you forgot to open in sudo then:
+\begin{verbatim}
+	:w !sudo tee %
+\end{verbatim}
+\section*{windows}%
+\label{sec:windows}
+
+C-w-| zooms window fullscreen
+C-w-= restores splits

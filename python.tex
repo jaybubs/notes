@@ -1,0 +1,15 @@
+\section{general}%
+\label{sec:general}
+
+callable function means it must be a definition or a lambda
+an equal sign means assignement, not a callable, it means a variable
+For a simple web server for all files in the current directory (and subdirs), available to anyone on your network, use python -m http.server 7777 (for port 7777 and Python 3).
+
+-c straight into bash will feed the command into python for immediate execution
+\begin{verbatim}
+	$ py -c "print(type(1))"
+	<class 'int'>
+\end{verbatim}
+
+primitive datatypes are usually passed by value
+complex datatypes (arrays, lists) are usually passed by reference

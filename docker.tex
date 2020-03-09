@@ -1,0 +1,17 @@
+\section{general}%
+\label{sec:general}
+
+to inpect logs in case a container exits:
+\begin{verbatim}
+	$docker ps -a; docker -log container_name
+\end{verbatim}
+
+to attach to a container terminal use:
+\begin{verbatim}
+	$docker exec -it container_name sh
+\end{verbatim}
+
+to validate a dc.yml just run config:
+\begin{verbatim}
+	$dc config
+\end{verbatim}

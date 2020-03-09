@@ -1,0 +1,57 @@
+\section*{General}%
+\label{sec:section_name}
+
+head - prints the first 10 lines of a file
+
+chmod - change mode of files
+chown - change ownership
+\begin{verbatim}
+	sudo chown -R $USER:$USER $HOME
+	#will change ownership recursively for a folder
+\end{verbatim}
+
+don't forget to launch xserver on windows! otherwise apps will load slow as fuck
+
+\section{targz}%
+\label{sec:targz}
+
+shit for linux comes tarballed and gzed so here's a quick way to untar that shit, the following flags: -x to extract (or -c to compress if you wanna reverse), -v for verbose output, -z for gz, -f for file/folder output name:
+\begin{verbatim}
+	$tar -xzvf archive.tar.gz ~/customname
+\end{verbatim}
+\section*{grep}%
+\label{sec:grep}
+grep is a simple but powerful text search/operation command (global regex print) that is just superfast and shit, useful especially when used in conjuction with piped operation (see piping~\ref{sec:piping})
+some useful flags include:
+\begin{itemize}
+	\item v inverts matechs
+	\item i ignores case sensitivity
+	\item r recursive search
+\end{itemize}
+text
+\section{piping}
+\label{sec:piping}
+
+say you got a bunch of  folder with files that contain shitloads of strings, and you want to search for all lines containing the word 'word'. best thing to do would be to grep it with -Hnir where H is filename, n line number, i is case sensitivity and r recursivity in case of subfolders. this will spit out output into console, so if you wanna work with this as a text file then you could pipe it into vim with the - flag which takes buffer output:
+\begin{verbatim}
+	grep -Hnri "searchthing" | vim -
+\end{verbatim}
+
+\section{xargs}%
+\label{sec:xargs}
+
+xargs takes multiple lines as input and runs a command on all of them one by one. simple example useful for piping through vim - run a shell command echo (sh -c 'echo {}') on all the lines of a concrete file (-a filename), one line at a time (-n1)
+\begin{verbatim}
+	$xargs -a filename -n1 -I{} sh -c 'echo {}'
+\end{verbatim}
+\section{curl}%
+\label{sec:curl}
+
+curl is Client URL, uhh...a terminal thing to do shit with urls like download, scrape and god knows what else, anyway, we care about downloading so
+\subsection{downloading}%
+\label{sub:downloading}
+
+actually pretty straightforward, just gotta remember to slap it with a few flags, namely -o to output into a file (instead of just a stdout), -L to follow redirects
+\begin{verbatim}
+	$curl URL/stupiddownloaditemname -o customname -L
+\end{verbatim}
