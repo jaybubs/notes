@@ -15,3 +15,13 @@ to validate a dc.yml just run config:
 \begin{verbatim}
 	$dc config
 \end{verbatim}
+
+\section{networking}%
+\label{sec:networking}
+
+containers on the same network can communicate with each other and will do so thru the container ports (cf in docker-compose ports: host:docker)
+
+As an example, if we have a mariadb container, and we wish to do a backup, it's convenient to setup a separate container for the procedure, slap it with alpine linux and mysql-client packages, then setup this specific container to live on the same network as the mariadb container, and use the mariadb's name as the host (rather than localhost or outright connecting into the db externally) a further explanation is provided here:
+\begin{verbatim}
+	https://medium.com/@ricardolsmendes/mysql-mariadb-with-scheduled-backup-jobs-running-in-docker-1956e9892e78
+\end{verbatim}
