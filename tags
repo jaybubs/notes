@@ -18,6 +18,7 @@ general	python.tex	/^\\section{general}%$/;"	s
 general	vim.tex	/^\\section{general}%$/;"	s
 generic	sql.tex	/^\\section{generic}%$/;"	s
 grep	linux.tex	/^\\section*{grep}%$/;"	s
+managing dotfiles	git.tex	/^\\section{managing dotfiles}%$/;"	s
 networking	docker.tex	/^\\section{networking}%$/;"	s
 piping	linux.tex	/^\\section{piping}$/;"	s
 sec:ahk	windows.tex	/^\\label{sec:ahk}$/;"	l
@@ -29,6 +30,7 @@ sec:general	python.tex	/^\\label{sec:general}$/;"	l
 sec:general	vim.tex	/^\\label{sec:general}$/;"	l
 sec:generic	sql.tex	/^\\label{sec:generic}$/;"	l
 sec:grep	linux.tex	/^\\label{sec:grep}$/;"	l
+sec:managing_dotfiles	git.tex	/^\\label{sec:managing_dotfiles}$/;"	l
 sec:networking	docker.tex	/^\\label{sec:networking}$/;"	l
 sec:piping	linux.tex	/^\\label{sec:piping}$/;"	l
 sec:section_name	linux.tex	/^\\label{sec:section_name}$/;"	l
