@@ -25,6 +25,23 @@ to overwrite a file you forgot to open in sudo then:
 \begin{verbatim}
 	:w !sudo tee %
 \end{verbatim}
+
+normally to edit a single file :e is used, however vim will protest if you try to load up more than one file, instead use:
+\begin{verbatim}
+	:args /path/*
+\end{verbatim}
+\section{working locally on a remote file}%
+\label{sec:working_locally_on_a_remote_file}
+
+that's right, this shit is possible, thanks to scp. directly from vim you can just e it:
+\begin{verbatim}
+	:e scp://user@server//path/path/file.ext	
+\end{verbatim}
+or dive into it straight from terminal:
+\begin{verbatim}
+	$scp://remoteuser@server.tld//absolute/path/to/document
+\end{verbatim}
+
 \section*{windows}%
 \label{sec:windows}
 

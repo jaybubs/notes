@@ -55,3 +55,41 @@ actually pretty straightforward, just gotta remember to slap it with a few flags
 \begin{verbatim}
 	$curl URL/stupiddownloaditemname -o customname -L
 \end{verbatim}
+\section{adminning}%
+\label{sec:adminning}
+
+\subsubsection{logging logins}%
+\label{ssub:logging_logins}
+
+This is a simple bash script that will log any login attempts (using entries of /var/log/auth.log, useful to monitor remote systems etc.)
+create a file called 'attacker':
+\begin{verbatim}
+	#!/bin/bash
+	#
+	#       attacker - prints out the last failed login attempt
+	#
+	echo  "The last failed login attempt came from IP address:"
+	grep -i "disconnected from" /var/log/auth.log|tail -1| cut -d: -f4| cut -f7 -d" "
+\end{verbatim}
+don't forget to make it executable and leave in the bin dir:
+\begin{verbatim}
+	sudo chmod +x attacker
+	sudo mv attacker /usr/local/bin/attacker
+\end{verbatim}
+
+also an advanced version:
+\begin{verbatim}
+	#
+	##     topattack - list the most persistent attackers
+	#
+	if [ -z "$1" ]; then
+	echo -e "\nUsage: `basename $0` <num> - Lists the top <num> attackers by IP"
+	exit 0
+	fi
+	echo " "
+	echo "Persistant recent attackers"
+	echo " "
+	echo "Attempts     IP "
+	echo "-----------------------"
+	grep "Disconnected from authenticating user root" /var/log/auth.log|cut -d: -f 4 | cut -d" " -f7|sort |uniq -c |sort -nr |head -$1
+\end{verbatim}

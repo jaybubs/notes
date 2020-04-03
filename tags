@@ -6,7 +6,10 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/bd612ba3/
+Elements	css.tex	/^\\section{Elements}%$/;"	s
+General	css.tex	/^\\section{General}%$/;"	s
 General	linux.tex	/^\\section*{General}%$/;"	s
+adminning	linux.tex	/^\\section{adminning}%$/;"	s
 ahk	windows.tex	/^\\section{ahk}%$/;"	s
 chapterising	latex.tex	/^\\subsection{chapterising}%$/;"	u	section:general
 curl	linux.tex	/^\\section{curl}%$/;"	s
@@ -18,12 +21,16 @@ general	python.tex	/^\\section{general}%$/;"	s
 general	vim.tex	/^\\section{general}%$/;"	s
 generic	sql.tex	/^\\section{generic}%$/;"	s
 grep	linux.tex	/^\\section*{grep}%$/;"	s
+logging logins	linux.tex	/^\\subsubsection{logging logins}%$/;"	b	section:adminning
 managing dotfiles	git.tex	/^\\section{managing dotfiles}%$/;"	s
 networking	docker.tex	/^\\section{networking}%$/;"	s
 piping	linux.tex	/^\\section{piping}$/;"	s
+sec:adminning	linux.tex	/^\\label{sec:adminning}$/;"	l
 sec:ahk	windows.tex	/^\\label{sec:ahk}$/;"	l
 sec:curl	linux.tex	/^\\label{sec:curl}$/;"	l
 sec:dbeaver	sql.tex	/^\\label{sec:dbeaver}$/;"	l
+sec:elements	css.tex	/^\\label{sec:elements}$/;"	l
+sec:general	css.tex	/^\\label{sec:general}$/;"	l
 sec:general	docker.tex	/^\\label{sec:general}$/;"	l
 sec:general	latex.tex	/^\\label{sec:general}$/;"	l
 sec:general	python.tex	/^\\label{sec:general}$/;"	l
@@ -37,10 +44,13 @@ sec:section_name	linux.tex	/^\\label{sec:section_name}$/;"	l
 sec:setup	latex.tex	/^\\label{sec:setup}$/;"	l
 sec:targz	linux.tex	/^\\label{sec:targz}$/;"	l
 sec:windows	vim.tex	/^\\label{sec:windows}$/;"	l
+sec:working_locally_on_a_remote_file	vim.tex	/^\\label{sec:working_locally_on_a_remote_file}$/;"	l
 sec:xargs	linux.tex	/^\\label{sec:xargs}$/;"	l
 setup	latex.tex	/^\\subsection{setup}%$/;"	u	section:general
+ssub:logging_logins	linux.tex	/^\\label{ssub:logging_logins}$/;"	l
 sub:chapterising	latex.tex	/^\\label{sub:chapterising}$/;"	l
 sub:downloading	linux.tex	/^\\label{sub:downloading}$/;"	l
 targz	linux.tex	/^\\section{targz}%$/;"	s
 windows	vim.tex	/^\\section*{windows}%$/;"	s
+working locally on a remote file	vim.tex	/^\\section{working locally on a remote file}%$/;"	s
 xargs	linux.tex	/^\\section{xargs}%$/;"	s
