@@ -1,0 +1,25 @@
+\section{General}%
+\label{sec:general}
+
+Notes for CakePHP framework.
+
+\section{Dockerisation}%
+\label{sec:dockerisation}
+
+Not the most straightforward thing but not too complicated either. The outline is this:
+\begin{enumerate}
+	\item Create a php Dockerfile, inside which:
+	\item Install dependencies
+	\item Install composer
+	\item Exec -it into the container
+	\item Create project with cakePHP app details
+\end{enumerate}
+Once the project is created, app can be migrated into the newly created folder if existing or otherwise feel free to start building. Due to composer limitations it is impossible to create a new project inside an already existing one, but whatever. Once the container is downed, the cakePHP config will persist, just be careful when purging images, so as not having to rebuild the Dockerfile and manually recreating a new project and having to migrate shit again.
+
+\subsection{bake permissions}%
+\label{sub:bake_permissions}
+
+for some reason the dockered image's installation might not have the correct permissions set after install, if so after docker execing into it just:
+\begin{verbatim}
+	# chmod +x bin/cake
+\end{verbatim}

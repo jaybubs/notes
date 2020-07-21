@@ -25,3 +25,14 @@ As an example, if we have a mariadb container, and we wish to do a backup, it's 
 \begin{verbatim}
 	https://medium.com/@ricardolsmendes/mysql-mariadb-with-scheduled-backup-jobs-running-in-docker-1956e9892e78
 \end{verbatim}
+
+\section{setting up php frameworks}%
+\label{sec:setting_up_php_frameworks}
+
+When building Dockerfile for php, make sure all the prerequisites have been also declared. This would be either apt install (deb) or apk install (alpine).
+In general the php image can and should live on its own, provided it lives on the same network as the nginx server..
+
+What's more important is that some frameworks will require composer be installed. Either automate it thru the dockerfile or manually docker exec -it into the image and do magic.
+
+Finally, a lot of these frameworks may want to create certain directories that are by default not writeable. So docker exec -it into the image and chmod 767 to make it writeable by the user(docker process).
+

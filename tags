@@ -6,7 +6,9 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/bd612ba3/
+Dockerisation	cake.tex	/^\\section{Dockerisation}%$/;"	s
 Elements	css.tex	/^\\section{Elements}%$/;"	s
+General	cake.tex	/^\\section{General}%$/;"	s
 General	css.tex	/^\\section{General}%$/;"	s
 General	linux.tex	/^\\section*{General}%$/;"	s
 adminning	linux.tex	/^\\section{adminning}%$/;"	s
@@ -29,7 +31,9 @@ sec:adminning	linux.tex	/^\\label{sec:adminning}$/;"	l
 sec:ahk	windows.tex	/^\\label{sec:ahk}$/;"	l
 sec:curl	linux.tex	/^\\label{sec:curl}$/;"	l
 sec:dbeaver	sql.tex	/^\\label{sec:dbeaver}$/;"	l
+sec:dockerisation	cake.tex	/^\\label{sec:dockerisation}$/;"	l
 sec:elements	css.tex	/^\\label{sec:elements}$/;"	l
+sec:general	cake.tex	/^\\label{sec:general}$/;"	l
 sec:general	css.tex	/^\\label{sec:general}$/;"	l
 sec:general	docker.tex	/^\\label{sec:general}$/;"	l
 sec:general	latex.tex	/^\\label{sec:general}$/;"	l

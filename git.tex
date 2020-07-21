@@ -1,30 +1,23 @@
 while most shit can be googled superfast here's some more useful shit
 
-\section{managing dotfiles}%
-\label{sec:managing_dotfiles}
+\section{initalise repository}%
+\label{sec:initalise_repository}
 
-dotfiles management can be shittingly difficult. there's a fuckton of tools  to 'help' but i feel that most of the time they hinder, because they don't really adhere to KISS. so here's a real KISS method.
-
-Create a dummy dotfiles folder, initialise a bare repo:
 \begin{verbatim}
-	$ mkdir $HOME/.dotfiles
-	git init --bare $HOME/.dotfiles
+	echo "# fatfreestack" >> README.md
+	git init
+	git add README.md
+	git commit -m "first commit"
+	git remote add origin https://github.com/jaybubs/fatfreestack.git
+	git push -u origin master
 \end{verbatim}
 
-Create an alias in bashrc to use the folder as the git dir while keeping \$HOME as the working dir:
-\begin{verbatim}
-	alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-\end{verbatim}
+\section{aliasing}%
+\label{sec:aliasing}
 
-add a remote and don't show untracked files:
-\begin{verbatim}
-	$ dotfiles config --local status.showUntrackedFiles no
-	$ dotfiles remote add origin URL
-\end{verbatim}
+git comes with its own aliasing, superuseful for complicated commands such as displaying  the goddamn fucking tree
 
-The end. You may now use dotfiles with the same syntax as git, eg:
 \begin{verbatim}
-	$ dotfiles add .tmux.conf
-	$ dotfiles commit -m "Add .tmux.conf"
-	$ dotfiles push
+  $ git config --global alias.tree "log --oneline --decorate --all --graph"
 \end{verbatim}
+which can then obviously be called by \$ git tree

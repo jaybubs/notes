@@ -12,6 +12,14 @@ chown - change ownership
 
 don't forget to launch xserver on windows! otherwise apps will load slow as fuck
 
+\subsection{moving shit}%
+\label{sub:moving_shit}
+
+moving the \textit{contents} of one folder to another make sure to asteriskise it!
+\begin{verbatim}
+	$ mv oldfolder/* newfolder/
+\end{verbatim}
+
 \section{targz}%
 \label{sec:targz}
 
@@ -92,4 +100,43 @@ also an advanced version:
 	echo "Attempts     IP "
 	echo "-----------------------"
 	grep "Disconnected from authenticating user root" /var/log/auth.log|cut -d: -f 4 | cut -d" " -f7|sort |uniq -c |sort -nr |head -$1
+\end{verbatim}
+
+\subsubsection{chmod}%
+\label{ssub:chmod}
+
+chmod has a long (12 chars) or short (octal xxx) form, usage is straightforward
+\begin{verbatim}
+	$ chmod +x folder
+	$ chmod 767 -R folder
+\end{verbatim}
+and so forth. to get the deets you can either `ll` or `stat filename` to get the octal form
+
+\section{managing dotfiles}%
+\label{sec:managing_dotfiles}
+
+dotfiles management can be shittingly difficult. there's a fuckton of tools  to 'help' but i feel that most of the time they hinder, because they don't really adhere to KISS. so here's a real KISS method.
+
+Create a dummy dotfiles folder, initialise a bare repo:
+\begin{verbatim}
+	$ mkdir $HOME/.dotfiles
+	git init --bare $HOME/.dotfiles
+\end{verbatim}
+
+Create an alias in bashrc to use the folder as the git dir while keeping \$HOME as the working dir:
+\begin{verbatim}
+	alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+\end{verbatim}
+
+add a remote and don't show untracked files:
+\begin{verbatim}
+	$ dotfiles config --local status.showUntrackedFiles no
+	$ dotfiles remote add origin URL
+\end{verbatim}
+
+The end. You may now use dotfiles with the same syntax as git, eg:
+\begin{verbatim}
+	$ dotfiles add .tmux.conf
+	$ dotfiles commit -m "Add .tmux.conf"
+	$ dotfiles push
 \end{verbatim}

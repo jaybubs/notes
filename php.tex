@@ -1,0 +1,41 @@
+\section{General}%
+\label{sec:general}
+
+\subsection{Syntax}%
+\label{sub:syntax}
+
+You can use the built-in syntax checker straight from cli:
+\begin{verbatim}
+	$ php -l filename.php
+\end{verbatim}
+
+or even better if you're using vim, then straight off the bat, \% will feed the current file into the argument:
+\begin{verbatim}
+	:!php -l %
+\end{verbatim}
+
+\subsection{variables}%
+\label{sub:variables}
+
+In PHP, you have to declare the global variables you want to use in a function, they're not accessible by default. You have to have global \$f3; at the first line of the function in order for it to access the variable.
+Passing \$f3 as an argument is syntactic sugar, it's a sweet shortcut for controller functions but it does basically the same.
+
+\section{MVC}%
+\label{sec:mvc}
+
+The MVC model-view-controller is a standard webdev architectural pattern, that adheres to separation of concerns and reusability/modularity philosophies. The cycle is fairly straightforward, the user sees the view, makes a request, the controller then forwards the request to the appropriate model and the model then does whatever code needs to be done to give back a result.
+
+\subsection{Model}%
+\label{sub:model}
+
+This is the central component really, the major chunk of code is most likely to sit here. It may be anything from editing data in a database, to performing calculations.
+
+\subsection{Controller}%
+\label{sub:controller}
+
+This is the slim routing part. It takes input from the user, processes it, passes it onto the model and/or retrieves back values. It doesn't do any heavy lifting, it's more or less just the middle man.
+
+\subsection{View}%
+\label{sub:view}
+
+This is the user-end interface, such as an app front or a web page with forms for the user to interact with and send values to the backend.
