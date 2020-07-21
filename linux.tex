@@ -52,6 +52,16 @@ xargs takes multiple lines as input and runs a command on all of them one by one
 \begin{verbatim}
 	$xargs -a filename -n1 -I{} sh -c 'echo {}'
 \end{verbatim}
+\section{ldd}%
+\label{sec:ldd}
+
+check whether programs have any shared libraries, eg see whether the login program uses a pam module
+\begin{verbatim}
+ $ ldd /bin/login | grep libpam
+       libpam.so.0 => /lib/libpam.so.0 (0xb7f47000)
+       libpam_misc.so.0 => /lib/libpam_misc.so.0 (0xb7f43000)
+\end{verbatim}
+if no output would be seen then login does not use pam
 \section{curl}%
 \label{sec:curl}
 
